@@ -28,9 +28,11 @@ This repository contains the frontend codebase for Save and Smile app
 
 ### Screenshots:
 
-![]([..](https://github.com/ZainabHussain20/Save-and-Smile-/)/public/1.jpeg)
-![](../public/2.jpeg)
-![](../public/3.jpeg)
+![F6B539B6-9EC5-4902-BC1F-1F5994BD3C4F](https://github.com/ZainabHussain20/Save-Smile-FrontEnd/assets/121151845/c94fa89d-6c9d-4c1c-ad12-3db7b6c7e80b)
+
+![888294A7-4F23-46A6-8EF6-BCCDBA942D61](https://github.com/ZainabHussain20/Save-Smile-FrontEnd/assets/121151845/b4d21c73-53be-4292-b87c-cd6b8a6ca30a)
+
+![Uploading 0E1B3F59-2B73-476E-97F3-309D6856A982.jpeg…]()
 
 #### future updates:
 
