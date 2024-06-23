@@ -1,12 +1,11 @@
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from "react-router-dom"
 
 const Category = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleSubmit = async (category) => {
-    navigate(`${category}`)
+     navigate(`${category}`)
   }
-
   
     return (
       <div className="Category-container">

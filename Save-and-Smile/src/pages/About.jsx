@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom'
-// import Category from './pages/Category'
 
 const About = () => {
   const navigate = useNavigate()
@@ -47,7 +46,7 @@ const About = () => {
           <button onClick={() => handleSubmit('/categories/restaurant')}>
             <img
               class="article-image"
-              src="../public/restaurant.png"
+              src="https://raw.githubusercontent.com/ZainabHussain20/Save-Smile-FrontEnd/a27066560998ef757f4178651bd1f9bc7e24690e/Save-and-Smile/public/restaurant.png"
               alt=""
               width="20"
               height="20"
@@ -56,7 +55,7 @@ const About = () => {
           <button onClick={() => handleSubmit('/categories/cinema')}>
             <img
               class="article-image"
-              src="../public/movies.png"
+              src="https://raw.githubusercontent.com/ZainabHussain20/Save-Smile-FrontEnd/a27066560998ef757f4178651bd1f9bc7e24690e/Save-and-Smile/public/movies.png"
               alt=""
               width="20"
               height="20"
@@ -65,7 +64,7 @@ const About = () => {
           <button onClick={() => handleSubmit('/categories/shop')}>
             <img
               class="article-image"
-              src="../public/shops.png"
+              src="https://raw.githubusercontent.com/ZainabHussain20/Save-Smile-FrontEnd/a27066560998ef757f4178651bd1f9bc7e24690e/Save-and-Smile/public/shops.png"
               alt=""
               width="20"
               height="20"
