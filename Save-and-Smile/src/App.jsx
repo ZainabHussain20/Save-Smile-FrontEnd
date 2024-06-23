@@ -17,7 +17,7 @@ const App = () => {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
-      setAuth(true);
+      checkToken();
     }
   }, []);
   const handleLogOut = () => {
@@ -26,8 +26,13 @@ const App = () => {
   }
   const checkToken = async () => {
     const user = await CheckSession()
-    setUser(user)
-  }
+    if (user) {
+      setUser(user);
+      setAuth(true);
+    } else {
+      setUser(null);
+      setAuth(false);
+    }  }
   useEffect(() => {
     const token = localStorage.getItem('token')
     if (token) {

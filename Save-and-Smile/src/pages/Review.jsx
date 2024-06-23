@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 
 const Review = () => {
   const { id } = useParams();
-  const [coupon, setCoupon] = useState(null);
+  const [coupon, setCoupon] = useState([]);
   const [form, setForm] = useState({
     userName: '',
     rating: 0,
@@ -46,11 +46,11 @@ const Review = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post(`http://localhost:3000/reviews`, form);
+      const response= await axios.post(`http://localhost:3000/reviews`, form);
       console.log('Review submitted:', response.data);
-      setForm({ coupon: id, userName: '', rating: 0, comment: '' });
       setRatings([...ratings, response.data]);
-    } catch (error) {
+      setForm({ coupon: id, userName: '', rating: 0, comment: '' });
+      } catch (error) {
       console.error('Error submitting review:', error.response ? error.response.data : error.message);
     }
   };
@@ -58,9 +58,9 @@ const Review = () => {
     const handleDelete = async (id) => {
     try {
       await axios.delete(`http://localhost:3000/reviews/${id}`);
-      getCoupon(); 
+      fetchRatings() 
     } catch (error) {
-      console.error('Error deleting coupon:', error);
+      console.error('Error deleting review:', error);
     }
   };
   
