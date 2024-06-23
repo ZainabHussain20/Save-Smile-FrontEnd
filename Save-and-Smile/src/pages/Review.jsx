@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import RatingComponent from '../components/Rating';
 import { useParams } from 'react-router-dom';
-import RatingComponent from '../components/Rating'
 
 const Review = () => {
   const { id } = useParams();
@@ -10,19 +10,32 @@ const Review = () => {
     userName: '',
     rating: 0,
     comment: '',
+    coupon: id
   });
+  const [ratings, setRatings] = useState([]);
+  
 
   useEffect(() => {
     getCoupon();
+    fetchRatings();
   }, [id]);
 
+  
   const getCoupon = async () => {
     try {
       const response = await axios.get(`http://localhost:3000/coupons/${id}`);
-      console.log(response.data);
       setCoupon(response.data);
     } catch (error) {
       console.error('Error fetching coupon:', error);
+    }
+  };
+
+  const fetchRatings = async () => {
+    try {
+      const response = await axios.get(`http://localhost:3000/reviews/coupons/${id}`);
+      setRatings(response.data);
+    } catch (error) {
+      console.error('Error fetching ratings:', error);
     }
   };
 
@@ -33,43 +46,33 @@ const Review = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post(`http://localhost:3000/reviews/${id}`, form);
+      const response = await axios.post(`http://localhost:3000/reviews`, form);
       console.log('Review submitted:', response.data);
-      // Optionally, you can refresh the coupon details after submission
-      getCoupon();
-      // Reset the form
-      setForm({
-        userName: '',
-        rating: 0,
-        comment: '',
-      });
+      setForm({ coupon: id, userName: '', rating: 0, comment: '' });
+      setRatings([...ratings, response.data]);
     } catch (error) {
-      console.error('Error submitting review:', error);
+      console.error('Error submitting review:', error.response ? error.response.data : error.message);
     }
   };
 
+    const handleDelete = async (id) => {
+    try {
+      await axios.delete(`http://localhost:3000/reviews/${id}`);
+      getCoupon(); 
+    } catch (error) {
+      console.error('Error deleting coupon:', error);
+    }
+  };
+  
   if (!coupon) {
-    return <div>Loading...</div>;
+    return <div>Loading coupon...</div>;
   }
 
   return (
     <div className="Coupons">
-        <h2>Customer Review</h2>
-       
-        <section className="Review-container">
-          <div key={coupons._id} className="Reviewcard">
-          <img src={coupons.img} alt={coupons.title} />
-            <section><h3>Name: {coupons.title}</h3>
-            <p>discount: {coupons.discount}</p>
-            <p>description: {coupons.description}</p></section>
-          
-       </div>
-        
-        </section>
       <h2>Customer Review</h2>
-
       <section className="Review-container">
-        <div className="Reviewcard">
+        <div key={coupon._id} className="Reviewcard">
           <img src={coupon.img} alt={coupon.title} />
           <section>
             <h3>Name: {coupon.title}</h3>
@@ -78,16 +81,15 @@ const Review = () => {
           </section>
         </div>
       </section>
-
       <form className="CouponForm" onSubmit={handleSubmit}>
         <label htmlFor="userName">User Name:</label>
-        {/* <input
+        <input
           id="userName"
           type="text"
           onChange={handleChange}
           value={form.userName}
           required
-        /> */}
+        />
         <label htmlFor="rating">Rating:</label>
         <RatingComponent
           value={form.rating}
@@ -97,31 +99,37 @@ const Review = () => {
         <textarea
           id="comment"
           onChange={handleChange}
+          type="text"
           value={form.comment}
           required
         />
+        <label htmlFor="coupon"></label>
+        <input
+          id="coupon"
+          type="hidden"
+          onChange={handleChange}
+          value={form.coupon}
+        />
         <button type="submit">Submit Review</button>
       </form>
-
-      {/* Display existing reviews */}
       <div className="Reviews-container">
-        <h2>Reviews</h2>
-        {coupon.reviews.length === 0 ? (
+        {ratings.length === 0 ? (
           <p>No reviews yet.</p>
         ) : (
           <ul>
-            {coupon.reviews.map((review) => (
+            {ratings.map((review) => (
               <li key={review._id}>
                 <p>User: {review.userName}</p>
                 <RatingComponent value={review.rating} readOnly />
                 <p>{review.comment}</p>
+                <button onClick={() => handleDelete(review._id)}>Delete</button>
               </li>
             ))}
           </ul>
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Review;

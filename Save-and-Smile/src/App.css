@@ -1,5 +1,5 @@
 #root {
-  max-width: 1280px;
+  max-width: 1280px; 
   margin: 0 auto;
   text-align: center;
 }
@@ -9,12 +9,12 @@ body {
 }
 
 .logo {
-  height: 3em;
-  margin-top: -0.01vh;
-  width: 15em;
+  height: 3.75em;
+  margin-top: -0.75vh;
+  width: 7.5em;
   will-change: filter;
   transition: filter 300ms;
-  margin-left: 159.25vh;
+  margin-left: 178.75vh;
   position: absolute;
 }
 
@@ -59,7 +59,7 @@ Nav {
   font-size: 2.5vh;
 }
 
-header {
+header{
   display: flex;
   background-color: rgb(177, 166, 166);
   margin-top: 1.5vh;
@@ -67,168 +67,171 @@ header {
 
 nav a {
   margin: 0 1em;
-  color: white;
+  color: white
 }
 
-.welcome-signin {
-  display: flex;
-  height: 50vh;
-  width: 100%;
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
+.welcome-signin{
+   display: flex;
+   height: 50vh;
+   width: 100%;
+   position: relative;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   
+  }
 
 .image2 {
-  height: 48vh;
-  width: 90vh;
-  margin-left: 55vh;
-  margin-top: 1.75vh;
+    height: 48vh;
+    width: 90vh;
+    margin-left: 55vh;
+    margin-top: 1.75vh;
 }
+
 
 /* https://codepen.io/dp_lewis/pen/WNZQzN */
 .card-label {
-  background: #444;
-  color: #fff;
-  transition: transform 400ms ease-out;
-  display: inline-block;
+	background: #444;
+	color: #fff;
+	transition: transform 400ms ease-out;
+	display: inline-block;
   min-height: 100%;
-  width: 50vh;
-  height: 30vh;
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  line-height: 100vh;
+	width: 50vh;
+	height: 30vh;
+	position: relative;
+	z-index: 1;
+	text-align: center;
+	line-height: 100vh;
 }
 
 .full {
-  position: absolute;
-  top: 60.5vh;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  white-space: nowrap;
+	position: absolute;
+	top: 60.5vh;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	white-space: nowrap;
 }
 
 .card {
-  position: absolute;
+	position: absolute;
 }
 
 .keys {
-  position: fixed;
-  z-index: 10;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 1rem;
-  color: #fff;
-  text-align: center;
-  transition: all 300ms linear;
-  opacity: 0;
+	position: fixed;
+	z-index: 10;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 1rem;
+	color: #fff;
+	text-align: center;
+	transition: all 300ms linear;
+	opacity: 0;
 }
 
 .card:focus ~ .keys {
-  opacity: 0.8;
+	opacity: 0.8;
 }
 
-.card:nth-of-type(1):checked ~ label:nth-of-type(1),
+.card:nth-of-type(1):checked ~ label:nth-of-type(1), 
 .card:nth-of-type(2):checked ~ label:nth-of-type(2),
 .card:nth-of-type(3):checked ~ label:nth-of-type(3),
-.card:nth-of-type(4):checked ~ label:nth-of-type(4) {
-  z-index: 0;
+.card:nth-of-type(4):checked ~ label:nth-of-type(4){
+   z-index: 0;
 }
 
 .card:nth-of-type(1):checked ~ label {
-  transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
 }
 
 .card:nth-of-type(2):checked ~ label {
-  transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
 }
 
 .card:nth-of-type(3):checked ~ label {
-  transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
 }
 
 .card:nth-of-type(4):checked ~ label {
-  transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
 }
 
-label[for='clubs'] {
-  background-size: cover;
-  background-image: url('https://img.freepik.com/premium-photo/restaurant-chef-kitchen-neural-network-ai-generated_76080-39007.jpg');
+label[for="clubs"] {
+	background-size: cover;
+	background-image: url("https://img.freepik.com/premium-photo/restaurant-chef-kitchen-neural-network-ai-generated_76080-39007.jpg");
 }
 
-label[for='spades'] {
-  background-size: cover;
-  background-image: url('https://images.nightcafe.studio/jobs/2tKWu3ALfOrJVVmvfv1Z/2tKWu3ALfOrJVVmvfv1Z--1--e1a42.jpg?tr=w-1600,c-at_max');
+label[for="spades"]{
+	background-size: cover;
+	background-image: url("https://images.nightcafe.studio/jobs/2tKWu3ALfOrJVVmvfv1Z/2tKWu3ALfOrJVVmvfv1Z--1--e1a42.jpg?tr=w-1600,c-at_max");
 }
-label[for='hearts'] {
-  background-size: cover;
-  background-image: url('https://www.gyftr.com/rewards/amex-platinumreserve/images/BookMyShow-banner.png');
-}
-
-label[for='clubs1'] {
-  background-size: cover;
-  background-image: url('https://www.mcdmenu.net/wp-content/uploads/2023/11/Mcdonalds-Menu-India-768x768.webp');
+label[for="hearts"] {
+	background-size: cover;
+	background-image: url("https://www.gyftr.com/rewards/amex-platinumreserve/images/BookMyShow-banner.png");
 }
 
-label[for='spades1'] {
-  background-size: cover;
-  background-image: url('https://th.bing.com/th/id/R.251dbf3ea9232a573b784b88b25de8df?rik=1DoABEOgtwW44A&pid=ImgRaw&r=0');
-}
-label[for='hearts1'] {
-  background-size: cover;
-  background-image: url('https://images.nightcafe.studio/jobs/L7oE6U8olGPtFEtzGUDR/L7oE6U8olGPtFEtzGUDR--1--8in1d.jpg?tr=w-1600,c-at_max');
+label[for="clubs1"] {
+	background-size: cover;
+	background-image: url("https://www.mcdmenu.net/wp-content/uploads/2023/11/Mcdonalds-Menu-India-768x768.webp");
 }
 
-label[for='clubs2'] {
-  background-size: cover;
-  background-image: url('https://images.nightcafe.studio/jobs/htbUvBfZwMglGTJNFUYA/htbUvBfZwMglGTJNFUYA--1--t12x5.jpg?tr=w-1600,c-at_max');
+label[for="spades1"]{
+	background-size: cover;
+	background-image: url("https://th.bing.com/th/id/R.251dbf3ea9232a573b784b88b25de8df?rik=1DoABEOgtwW44A&pid=ImgRaw&r=0");
+}
+label[for="hearts1"] {
+	background-size: cover;
+	background-image: url("https://images.nightcafe.studio/jobs/L7oE6U8olGPtFEtzGUDR/L7oE6U8olGPtFEtzGUDR--1--8in1d.jpg?tr=w-1600,c-at_max");
 }
 
-label[for='spades2'] {
-  background-size: cover;
-  background-image: url('https://img.freepik.com/premium-photo/perfume-best-perfume-generative-ai_983314-1972.jpg');
+label[for="clubs2"] {
+	background-size: cover;
+	background-image: url("https://images.nightcafe.studio/jobs/htbUvBfZwMglGTJNFUYA/htbUvBfZwMglGTJNFUYA--1--t12x5.jpg?tr=w-1600,c-at_max");
 }
-label[for='hearts2'] {
-  background-size: cover;
-  background-image: url('https://cdna.artstation.com/p/assets/images/images/042/872/676/large/duong-nguyen-junpeiro-remastered.jpg?1635692715');
+
+label[for="spades2"]{
+	background-size: cover;
+	background-image: url("https://img.freepik.com/premium-photo/perfume-best-perfume-generative-ai_983314-1972.jpg");
+}
+label[for="hearts2"] {
+	background-size: cover;
+	background-image: url("https://cdna.artstation.com/p/assets/images/images/042/872/676/large/duong-nguyen-junpeiro-remastered.jpg?1635692715");
 }
 
 .card-label:before,
 .card-label:after {
-  color: white;
-  display: block;
-  background: rgba(255, 255, 255, 0.2);
-  position: absolute;
-  padding: 1rem;
-  font-size: 3rem;
-  height: 10rem;
-  line-height: 10rem;
-  top: 50%;
-  transform: translate3d(0, -50%, 0);
-  cursor: pointer;
+	color: white;
+	display: block;
+	background: rgba(255,255,255,0.2);
+	position: absolute;
+	padding: 1rem;
+	font-size: 3rem;
+	height: 10rem;
+	line-height: 10rem;
+	top: 50%;
+	transform: translate3d(0, -50%, 0);
+	cursor: pointer;
 }
 
 .card-label:before {
-  content: '\276D';
-  right: 100%;
-  border-top-left-radius: 50%;
-  border-bottom-left-radius: 50%;
+	content: "\276D";
+	right: 100%;
+	border-top-left-radius: 50%;
+	border-bottom-left-radius: 50%;
 }
 
 .card-label:after {
-  content: '\276C';
-  left: 100%;
-  border-top-right-radius: 50%;
-  border-bottom-right-radius: 50%;
+	content: "\276C";
+	left: 100%;
+	border-top-right-radius: 50%;
+	border-bottom-right-radius: 50%;
 }
 /**/
 
-.Button {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.Button{
+display: grid;
+grid-template-columns: 1fr 1fr;
+
 }
 
 .button {
@@ -252,9 +255,10 @@ label[for='hearts2'] {
   color: white;
 }
 
-.buttonCss {
+.buttonCss{
   color: white;
   font-weight: bold;
+
 }
 
 .style {
@@ -265,9 +269,10 @@ label[for='hearts2'] {
   position: relative;
   margin-top: 2.5vh;
   margin-left: 28vh;
+
 }
 
-.cateButton {
+.cateButton{
   position: absolute;
   background-color: rgba(202, 186, 186, 0.377);
   padding:3vh ;
@@ -276,8 +281,9 @@ label[for='hearts2'] {
   height: 45vh;
   width: 50vh;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr ;
   border: 3px rgb(66, 66, 62) solid;
+
 }
 
 .categoryBu{
@@ -285,14 +291,15 @@ label[for='hearts2'] {
   font-size: 3vh;
   font-weight: bold;
   background-color: rgba(0, 0, 0, 0.63);
-  
 }
-.category {
+
+.category{
   height: 35vh;
   width: 50vh;
   margin-left: -0.15vh;
   margin-bottom: -6vh;
   margin-right: -0.15vh;
+  
 }
 
 .cateButton2{
@@ -304,12 +311,13 @@ label[for='hearts2'] {
   height: 45vh;
   width: 50vh;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr ;
   margin-left: 70.5vh;
   border: 3px rgb(66, 66, 62) solid;
+
 }
 
-.cateButton3 {
+.cateButton3{
   position: absolute;
   background-color: rgba(202, 186, 186, 0.377);
   padding:3vh ;
@@ -321,15 +329,16 @@ label[for='hearts2'] {
   grid-template-columns: 1fr ;
   border: 3px rgb(66, 66, 62) solid;  
   margin-left: 139.25vh;
+
 }
 
 h1 {
   font-size: 40px;
   text-align: center;
   border: 3px rgb(66, 66, 62) solid;
-  border-radius: 10px;
+  border-radius: 10px; 
   display: block;
-  background-color: rgb(129, 130, 138);
+  background-color:rgb(129, 130, 138);
   position: relative;
   margin-left: 69.5vh;
   width: 53vh;
@@ -340,13 +349,13 @@ h1 {
   margin-top: 8.5vh;
 }
 
-h2 {
+ h2 {
   font-size: 45px;
   text-align: center;
   border: 3px rgb(66, 66, 62) solid;
-  border-radius: 10px;
+  border-radius: 10px; 
   display: block;
-  background-color: rgb(129, 130, 138);
+  background-color:rgb(129, 130, 138);
   position: relative;
   margin-left: 68vh;
   width: 53vh;
@@ -355,11 +364,12 @@ h2 {
   color: white;
 }
 
-.container-grid {
+.container-grid{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  color: black;
+  color:black;
   font-weight: bold;
+
 }
 
 .business-card {
@@ -375,7 +385,7 @@ h2 {
 }
 
 img {
-  height: 60vh;
+  height: 60vh ;
   width: 55vh;
   margin: 5px;
   margin-top: 10px;
@@ -384,21 +394,32 @@ img {
 
 .container-container {
   display: grid;
-  color: white;
+  color:white;
   font-weight: bold;
 }
 
 .Detailcard > img {
-  height: 75vh;
+  height: 75vh ;
   width: 85vh;
   margin: 5px;
   margin-top: 10px;
   border-radius: 12px;
 }
 
-.CouponForm {
+.CouponForm{
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr ;
+  color: white;
+  padding: 3vh;
+  text-align: left;
+  font-size: bold;
+  margin: 3vh;
+
+}
+
+.BusinessForm{
+  display: grid;
+  grid-template-columns: 1fr ;
   color: white;
   padding: 3vh;
   text-align: left;
@@ -406,17 +427,7 @@ img {
   margin: 3vh;
 }
 
-.BusinessForm {
-  display: grid;
-  grid-template-columns: 1fr;
-  color: white;
-  padding: 3vh;
-  text-align: left;
-  font-size: bold;
-  margin: 3vh;
-}
-
-.Review-container {
+.Review-container{
   width: 130vh;
   display: flex;
   justify-content: center;
@@ -424,22 +435,23 @@ img {
   margin-left: 32vh;
 }
 
-.Reviewcard {
+.Reviewcard{
   color: white;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns:1fr 1fr ;
   background-color: rgb(177, 166, 166);
   color: rgb(80, 76, 76);
   border: solid 3px rgb(56, 56, 52);
 }
 
 .Reviewimg {
-  height: 35vh;
+  height:35vh ;
   width: 35vh;
   margin: 12px;
   margin-top: 10px;
   border-radius: 12px;
 }
+
 #container {
   width: 100%;
   height: 2.5rem;
@@ -502,6 +514,7 @@ img {
   padding: 20px;
   border: 5px solid gray;
   margin: 5vh;
+  margin-left: 41.5vh;
 }
 .article-box {
   display: flex;

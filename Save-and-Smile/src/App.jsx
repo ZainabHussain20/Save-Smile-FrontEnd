@@ -11,7 +11,6 @@ import Detail from './pages/Detail';
 import Review from './pages/Review';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
-
 const App = () => {
   const [user, setUser] = useState(null)
   const [auth, setAuth] = useState(false);
@@ -25,23 +24,20 @@ const App = () => {
     setUser(null)
     localStorage.clear()
   }
-
   const checkToken = async () => {
     const user = await CheckSession()
     setUser(user)
   }
-
   useEffect(() => {
     const token = localStorage.getItem('token')
     if (token) {
       checkToken()
     }
   }, [])
-
   return (
     <div className="App">
       <div className="space"></div>
-      <Nav />
+      <Nav auth={auth} handleLogOut={handleLogOut} />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -59,5 +55,4 @@ const App = () => {
     </div>
   )
 }
-
 export default App;

@@ -1,17 +1,31 @@
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 
-const Nav = () => {
+  const Nav = ({ auth, handleLogOut }) => {
+    const navigate = useNavigate();
+    const handleLogoutClick = () => {
+      handleLogOut();
+      navigate('/signin');
+    };
   return (
     <header>
       <nav>
       <NavLink to="/">Home</NavLink>
       <NavLink to="/about">About</NavLink>
-      {/* <NavLink to="/coupons/couponForm"><button>Add New Coupon</button></NavLink> */}
-      <NavLink to="/signin">Sign-In</NavLink>
-      <NavLink to="/signup">Sign-Up</NavLink>
+      <NavLink to="/signin">Sign In</NavLink>
+      <NavLink to="/signup">Sign Up</NavLink>
+      {auth ? (
+          <NavLink to = "/" onClick={handleLogoutClick}>Logout</NavLink>
+        ) : (
+          <>
+             <NavLink to="/signin">Sign In</NavLink>
+             <NavLink to="/signup">Sign Up</NavLink>
+          </>
+        )}
+        
 
       </nav>
-      <img className='logo' src="https://lh3.googleusercontent.com/drive-viewer/AKGpihbAee688PaQ1j3733iX20-JtUhpwjhw7ytg-aqi8wDYm1zCEYFHm5KJ5jZTKe0we13AjVA2sIkaeQYOoWh-ZIiKbAtngGfe4N4=s2560"></img>
+      <img className='logo' src="https://lh3.googleusercontent.com/drive-viewer/AKGpihZbiS59QrpIBaRnT0P6xHrjDXO5UDcLJBAy3XXJ5d8a7_MboRU40lzksmINpOvDJ78gdUvr3VOKgbugGKfuzTIcnZ7fDe0vCxI=s2560"></img>
     </header>
     
   )
