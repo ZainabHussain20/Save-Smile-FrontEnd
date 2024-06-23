@@ -18,8 +18,6 @@ import { useNavigate } from 'react-router-dom';
           <NavLink to = "/" onClick={handleLogoutClick}>Logout</NavLink>
         ) : (
           <>
-             <NavLink to="/signin">Sign In</NavLink>
-             <NavLink to="/signup">Sign Up</NavLink>
           </>
         )}
         
